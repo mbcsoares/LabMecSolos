@@ -15,7 +15,8 @@
 ## 📸 Tela Inicial
 
 <p align="center">
-  <img src="docs/screenshots/splash.png" alt="Tela Inicial do LabMecSolos" width="300"/>
+  <img src="LabMecSolos/Logo/imagem (1).png" alt="Tela Inicial do LabMecSolos" width="300"/>
+  <img src="LabMecSolos/Logo/imagem (2).png" alt="Tela de Informações do LabMecSolos" width="300"/>
   <br/>
   <em>Splash Screen do aplicativo — desenvolvimento em andamento.</em>
 </p>
