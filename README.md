@@ -135,6 +135,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
   <strong>LabMecSolos</strong> — Transformando a gestão de laboratórios de solos.<br/>
   Desenvolvido com ❤️ por Micael Bruno Cassiano Soares.
 </p>
-```
 
 ---
