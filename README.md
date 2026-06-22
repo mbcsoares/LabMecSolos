@@ -130,10 +130,10 @@ Para bugs ou sugestões, utilize a [seção de Issues](https://github.com/seu-us
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-
+```
 <p align="center">
   <strong>LabMecSolos</strong> — Transformando a gestão de laboratórios de solos.<br/>
   Desenvolvido com ❤️ por Micael Bruno Cassiano Soares.
 </p>
-
+```
 ---
