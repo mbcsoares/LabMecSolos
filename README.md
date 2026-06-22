@@ -21,8 +21,6 @@
   <em>Splash Screen do aplicativo — desenvolvimento em andamento.</em>
 </p>
 
-*Observação: Substitua pela imagem real da tela inicial quando disponível.*
-
 ---
 
 ## 🧩 Módulos do Sistema
