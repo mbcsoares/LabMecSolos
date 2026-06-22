@@ -1,0 +1,84 @@
+.ion-page {
+  background-color: var(--ion-background-color);
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card ion-card-header {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.auth-card ion-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ion-color-dark);
+}
+
+.auth-card ion-card-subtitle {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+  margin-top: 4px;
+}
+
+.auth-card ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 4px;
+  --highlight-color-focused: var(--ion-color-primary);
+}
+
+.auth-card ion-input {
+  --padding-start: 12px;
+  font-size: 14px;
+}
+
+.auth-card ion-label {
+  color: var(--ion-color-dark);
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.auth-error {
+  font-size: 13px;
+  color: var(--ion-color-danger);
+  margin: 8px 0 4px 0;
+  min-height: 20px;
+  text-align: center;
+}
+
+.auth-button {
+  margin-top: 8px;
+  font-weight: 600;
+  height: 48px;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px 0 4px;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.auth-links a {
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}

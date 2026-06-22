@@ -1,0 +1,7 @@
+.home-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--ion-background-color);
+  padding-bottom: 24px;
+}

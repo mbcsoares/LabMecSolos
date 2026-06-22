@@ -1,0 +1,7 @@
+{
+  "name": "LabMecSolos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

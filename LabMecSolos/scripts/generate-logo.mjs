@@ -1,0 +1,50 @@
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import sharp from 'sharp';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const projectRoot = join(__dirname, '..');
+
+const logoTransparentSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380">
+  <g transform="translate(0, 0)">
+    <line x1="0" y1="0" x2="800" y2="0" stroke="#1E56B2" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 0,25 L 520,25 L 520,45 L 800,45 L 800,95 L 520,95 L 520,75 L 0,75 Z" fill="#225EC3"/>
+    <path d="M 0,105 L 520,105 L 520,90 L 800,90 L 800,140 L 520,140 L 520,130 L 0,130 Z" fill="#88D7C0"/>
+    <path d="M 0,150 L 520,150 L 520,175 L 800,175 L 800,225 L 520,225 L 520,200 L 0,200 Z" fill="#4B937D"/>
+    <path d="M 0,235 L 520,235 L 520,220 L 800,220 L 800,270 L 520,270 L 520,260 L 0,260 Z" fill="#9CA3AF"/>
+    <path d="M 0,280 L 520,280 L 520,305 L 800,305 L 800,355 L 520,355 L 520,330 L 0,330 Z" fill="#374151"/>
+    <line x1="0" y1="380" x2="800" y2="380" stroke="#374151" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>`;
+
+async function main() {
+  console.log('Gerando logo estatico...');
+
+  // Logo for reports/documents (transparent background, 800x380)
+  await sharp(Buffer.from(logoTransparentSvg))
+    .resize(800, 380)
+    .png()
+    .toFile(join(projectRoot, 'public', 'assets', 'logo.png'));
+  console.log('  public/assets/logo.png (800x380)');
+
+  // Also save as SVG for vector use
+  const { writeFileSync, mkdirSync, existsSync } = await import('fs');
+  const assetsDir = join(projectRoot, 'public', 'assets');
+  if (!existsSync(assetsDir)) mkdirSync(assetsDir, { recursive: true });
+  writeFileSync(join(assetsDir, 'logo.svg'), logoTransparentSvg);
+  console.log('  public/assets/logo.svg');
+
+  // Also copy the original brand SVG
+  const originalSvg = readFileSync(join(projectRoot, '..', 'Logo', 'Logo.svg'));
+  writeFileSync(join(assetsDir, 'icon', 'icon-source.svg'), originalSvg);
+  console.log('  public/assets/icon/icon-source.svg (original 1024x1024)');
+
+  console.log('\nLogos gerados com sucesso!');
+}
+
+main().catch(err => {
+  console.error('Erro:', err.message);
+  process.exit(1);
+});

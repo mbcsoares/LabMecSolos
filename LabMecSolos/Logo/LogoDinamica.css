@@ -1,0 +1,74 @@
+/* Container Centralizador */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.svg-logo {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Configuração Base das Camadas do Solo */
+.camada {
+  opacity: 0;
+  transform-origin: center;
+  transform: scaleX(0); /* Começam invisíveis e "achatadas" horizontalmente */
+  animation: revelarCamada 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.camada-linha {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: desenharLinha 0.6s ease-out forwards;
+}
+
+/* Ordem de surgimento: de baixo para cima (Simulando Compactação/Sedimentação) */
+.c-grafite { animation-delay: 0.1s; transform-origin: left; }
+.c-cinza-claro { animation-delay: 0.25s; transform-origin: right; }
+.c-verde-escuro { animation-delay: 0.4s; transform-origin: left; }
+.c-verde-claro { animation-delay: 0.55s; transform-origin: right; }
+.c-azul { animation-delay: 0.7s; transform-origin: left; }
+
+/* Animação Keyframes para a entrada */
+@keyframes revelarCamada {
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes desenharLinha {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --- EFEITO DE CARREGAMENTO (LOOPING ATIVO) --- */
+/* Se a prop isLoading for verdadeira, ativa uma pulsação tecnológica suave */
+.is-loading .camada {
+  animation: revelarCamada 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+             pulsarLaboratorio 2s ease-in-out infinite alternate;
+}
+
+/* Alterna o delay do pulso para criar uma "onda" pelas camadas de solo */
+.is-loading .c-grafite { animation-delay: 0.1s, 0s; }
+.is-loading .c-cinza-claro { animation-delay: 0.25s, 0.2s; }
+.is-loading .c-verde-escuro { animation-delay: 0.4s, 0.4s; }
+.is-loading .c-verde-claro { animation-delay: 0.55s, 0.6s; }
+.is-loading .c-azul { animation-delay: 0.7s, 0.8s; }
+
+@keyframes pulsarLaboratorio {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.2) drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+  }
+}

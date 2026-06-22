@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">LabMecSolos</string>
+    <string name="title_activity_main">LabMecSolos</string>
+    <string name="package_name">br.ufrn.labmecsolos</string>
+    <string name="custom_url_scheme">br.ufrn.labmecsolos</string>
+</resources>
